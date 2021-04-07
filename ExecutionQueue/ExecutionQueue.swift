@@ -43,6 +43,12 @@ open class ExecutionQueue{
         queue.append(task)
     }
     
+    public func insertToQueue(tasks:[Job]){
+        tasks.forEach { (job) in
+            queue.append(job)
+        }
+    }
+    
     private func processQueue(){
         if queue.count > 0{
             let task = queue[0]

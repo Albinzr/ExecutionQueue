@@ -23,10 +23,7 @@ class ViewController: UIViewController {
         let at2 = JobTest(id: 12)
         let at3 = JobTest(id: 13)
         
-        q.insertToQueue(task: at0)
-        q.insertToQueue(task: at1)
-        q.insertToQueue(task: at2)
-        q.insertToQueue(task: at3)
+        q.insertToQueue(tasks: [at0,at1,at2,at3])
         
 
     }
