@@ -7,30 +7,6 @@
 
 import Foundation
 
-public protocol ExecutionQueueDelegate:class {
-    func sussess(job:Job)
-    func failled(job:Job)
-}
-
-open class Job{
-    
-    public var id:Int = 0
-    var noOfRetry:Double = 1
-    var isProcessing:Bool = false
-    
-    public init(id:Int){
-        self.id = id
-    }
-    
-    
-    open func execute(success:((Job))->(), failler:(Job)->()){
-        
-    }
-    
-}
-
-
-
 open class ExecutionQueue{
     
     public var retryTimer:Double = 0
@@ -52,9 +28,7 @@ open class ExecutionQueue{
                 self.processQueue()
             }
         })
-        
         queueTimer?.fire()
-        
     }
     
     public func stopProcessingQueue(){

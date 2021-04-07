@@ -13,12 +13,13 @@
 		C730DB61261C955D004E0CFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C730DB5F261C955D004E0CFC /* Main.storyboard */; };
 		C730DB63261C955E004E0CFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C730DB62261C955E004E0CFC /* Assets.xcassets */; };
 		C730DB66261C955E004E0CFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C730DB64261C955E004E0CFC /* LaunchScreen.storyboard */; };
+		C7414030261DDEA100B9DC44 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741402F261DDEA100B9DC44 /* Job.swift */; };
+		C7414034261DDEB100B9DC44 /* ExecutionQueueDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7414033261DDEB100B9DC44 /* ExecutionQueueDelegate.swift */; };
 		C75C992E261C540000B28CB1 /* ExecutionQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = C75C9920261C540000B28CB1 /* ExecutionQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C75C993A261C541A00B28CB1 /* ExecutionQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75C9939261C541A00B28CB1 /* ExecutionQueue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C730DB43261C9490004E0CFC /* ExecutionQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ExecutionQueue.framework; path = "/Users/albinzr/Documents/work/ExecutionQueue/build/Debug-iphoneos/ExecutionQueue.framework"; sourceTree = "<absolute>"; };
 		C730DB57261C955D004E0CFC /* qt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C730DB59261C955D004E0CFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C730DB5B261C955D004E0CFC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,6 +28,9 @@
 		C730DB62261C955E004E0CFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C730DB65261C955E004E0CFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C730DB67261C955E004E0CFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C741402E261D90BB00B9DC44 /* ExecutionQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExecutionQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C741402F261DDEA100B9DC44 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		C7414033261DDEB100B9DC44 /* ExecutionQueueDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutionQueueDelegate.swift; sourceTree = "<group>"; };
 		C75C9920261C540000B28CB1 /* ExecutionQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExecutionQueue.h; sourceTree = "<group>"; };
 		C75C9921261C540000B28CB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C75C9939261C541A00B28CB1 /* ExecutionQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutionQueue.swift; sourceTree = "<group>"; };
@@ -70,6 +74,7 @@
 			children = (
 				C75C991F261C540000B28CB1 /* ExecutionQueue */,
 				C730DB58261C955D004E0CFC /* qt */,
+				C741402E261D90BB00B9DC44 /* ExecutionQueue.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +84,8 @@
 				C75C9920261C540000B28CB1 /* ExecutionQueue.h */,
 				C75C9921261C540000B28CB1 /* Info.plist */,
 				C75C9939261C541A00B28CB1 /* ExecutionQueue.swift */,
+				C741402F261DDEA100B9DC44 /* Job.swift */,
+				C7414033261DDEB100B9DC44 /* ExecutionQueueDelegate.swift */,
 			);
 			path = ExecutionQueue;
 			sourceTree = "<group>";
@@ -129,7 +136,7 @@
 			);
 			name = ExecutionQueue;
 			productName = ExecutionQueue;
-			productReference = C730DB43261C9490004E0CFC /* ExecutionQueue.framework */;
+			productReference = C741402E261D90BB00B9DC44 /* ExecutionQueue.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -205,6 +212,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C75C993A261C541A00B28CB1 /* ExecutionQueue.swift in Sources */,
+				C7414034261DDEB100B9DC44 /* ExecutionQueueDelegate.swift in Sources */,
+				C7414030261DDEA100B9DC44 /* Job.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
