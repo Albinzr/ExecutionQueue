@@ -8,32 +8,44 @@
 import UIKit
 import ExecutionQueue
 
-class ViewController: UIViewController,ExecutionQueueDelegate {
-    func sussess(job: Job) {
-        print("success-----------",job)
-    }
-    
-    func failled(job: Job) {
-        print("faill----------",job)
-    }
-    
+class ViewController: UIViewController {
+
+    let q = ExecutionQueue.init(retryTimer: 10, noOfRetry: 3, startExecution: true)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.yellow.withAlphaComponent(0.3)
-    
-        let q = ExecutionQueue.init(retryTimer: 3, noOfRetry: 3, startExecution: true)
+            
         q.delegate = self
-        let at = Test(id: 10)
-        q.insertToQueue(task: at)
+    
+        let at0 = JobTest(id: 10)
+        let at1 = JobTest(id: 11)
+        let at2 = JobTest(id: 12)
+        let at3 = JobTest(id: 13)
+        
+        q.insertToQueue(task: at0)
+        q.insertToQueue(task: at1)
+        q.insertToQueue(task: at2)
+        q.insertToQueue(task: at3)
+        
 
     }
     
 }
 
-class Test:Job{
+
+extension ViewController: ExecutionQueueDelegate{
+    func sussess(job: Job) {
+        print("success-----------",job.id)
+    }
     
-    
+    func failled(job: Job) {
+        print("failled after all retry----------",job.id)
+    }
+}
+
+class JobTest:Job{
+
     override init(id:Int) {
         super.init(id: id)
     }

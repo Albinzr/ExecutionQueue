@@ -46,24 +46,28 @@ open class ExecutionQueue{
     private func processQueue(){
         if queue.count > 0{
             let task = queue[0]
-            if !task.isProcessing{
+            if !task.isProcessing {
                 task.isProcessing = true
                 task.execute { (job) in
                     print("success",job)
                     queue.remove(at: 0)
                     delegate?.sussess(job: job)
+                    queueTimer?.fire()
                 } failler: { (job) in
                     print("retrying",job)
                     if task.noOfRetry >= noOfRetry  {
                         queue.remove(at: 0)
                         delegate?.failled(job: job)
+                        queueTimer?.fire()
                     }else{
                         task.isProcessing = false
                         task.noOfRetry += 1
+                        queueTimer?.fire()
                     }
                 }
             }
         }
     }
+    
     
 }
