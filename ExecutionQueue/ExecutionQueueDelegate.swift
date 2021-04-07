@@ -8,6 +8,11 @@
 import Foundation
 
 public protocol ExecutionQueueDelegate:class {
+    
+    //MARK: - success job callback
     func sussess(job:Job)
+    
+    //MARK: - failled job callback
     func failled(job:Job)
+    
 }

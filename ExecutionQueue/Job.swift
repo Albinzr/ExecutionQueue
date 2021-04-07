@@ -17,6 +17,7 @@ open class Job{
         self.id = id
     }
     
+    //MARK: - execute logic that needs to be overridden 
     open func execute(success:((Job))->(), failler:(Job)->()){
         
     }

@@ -21,6 +21,7 @@ open class ExecutionQueue{
         if startExecution { startProcessQueue() }
     }
     
+    //MARK: - startProcessQueue
     public func startProcessQueue(){
         
         queueTimer = Timer.scheduledTimer(withTimeInterval: retryTimer, repeats: true, block: { (_)  in
@@ -31,36 +32,39 @@ open class ExecutionQueue{
         queueTimer?.fire()
     }
     
+    //MARK: - stopProcessingQueue
     public func stopProcessingQueue(){
         queueTimer?.invalidate()
     }
     
+    //MARK: - clearQueue
     public func clearQueue(){
         queue = []
     }
     
+    //MARK: - insertToQueue
     public func insertToQueue(task:Job){
         queue.append(task)
     }
     
+    //MARK: - insert multiple items in To Queue
     public func insertToQueue(tasks:[Job]){
         tasks.forEach { (job) in
             queue.append(job)
         }
     }
     
+    //MARK: - processQueue
     private func processQueue(){
         if queue.count > 0{
             let task = queue[0]
             if !task.isProcessing {
                 task.isProcessing = true
                 task.execute { (job) in
-                    print("success",job)
                     queue.remove(at: 0)
                     delegate?.sussess(job: job)
                     queueTimer?.fire()
                 } failler: { (job) in
-                    print("retrying",job)
                     if task.noOfRetry >= noOfRetry  {
                         queue.remove(at: 0)
                         delegate?.failled(job: job)

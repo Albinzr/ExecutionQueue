@@ -42,13 +42,14 @@ extension ViewController: ExecutionQueueDelegate{
 }
 
 class JobTest:Job{
-
+    
     override init(id:Int) {
         super.init(id: id)
     }
     
     
     override func execute(success: ((Job)) -> (), failler: (Job) -> ()) {
+        //MARK: - Logic for execution followed by success or faill
         success(self)
     }
 }
