@@ -10,7 +10,7 @@ import ExecutionQueue
 
 class ViewController: UIViewController {
 
-    let q = ExecutionQueue.init(retryTimer: 10, noOfRetry: 3, startExecution: true)
+    let q = ExecutionQueue.init(retryTimer: 3, noOfRetry: 3, startExecution: true,threadType: .userInitiated)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,6 @@ class ViewController: UIViewController {
         
         q.insertToQueue(tasks: [at0,at1,at2,at3])
         
-
     }
     
 }
@@ -49,6 +48,7 @@ class JobTest:Job{
     
     
     override func execute(success: ((Job)) -> (), failler: (Job) -> ()) {
+        
         //MARK: - Logic for execution followed by success or faill
         success(self)
     }
