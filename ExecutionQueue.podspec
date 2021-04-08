@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ExecutionQueue"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "A light weight queueing library for serial execution with retry"
   s.homepage     = "https://github.com/Albinzr/ExecutionQueue.git"
   s.license      = 'MIT'
@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.platform     = :ios, '10.0'
 
-  s.source_files  = "ExecutionQueue", "ExecutionQueue/**/*.swift"
+  s.source_files  = "ExecutionQueue", "ExecutionQueue/*.swift"
   
 end

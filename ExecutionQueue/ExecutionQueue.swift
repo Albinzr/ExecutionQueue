@@ -79,16 +79,16 @@ open class ExecutionQueue{
     //MARK: - processQueue
     private func processQueue(){
         if queue.count > 0{
-            let task = queue[0]
+            let task = queue.last
             if !task.isProcessing {
                 task.isProcessing = true
                 task.execute { (job) in
-                    queue.remove(at: 0)
+                    queue.removeLast()
                     delegate?.sussess(job: job)
                     executeNext()
                 } failler: { (job) in
                     if task.noOfRetry >= noOfRetry  {
-                        queue.remove(at: 0)
+                        queue.removeLast()
                         delegate?.failled(job: job)
                         executeNext()
                     }else{

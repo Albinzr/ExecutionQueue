@@ -30,7 +30,8 @@ class ViewController: UIViewController {
 }
 
 
-extension ViewController: ExecutionQueueDelegate{
+extension ViewController: ExecutionQueueDelegate {
+    
     func sussess(job: Job) {
         print("success-----------",job.id)
     }
@@ -38,6 +39,7 @@ extension ViewController: ExecutionQueueDelegate{
     func failled(job: Job) {
         print("failled after all retry----------",job.id)
     }
+    
 }
 
 class JobTest:Job{
@@ -46,11 +48,10 @@ class JobTest:Job{
         super.init(id: id)
     }
     
-    
     override func execute(success: ((Job)) -> (), failler: (Job) -> ()) {
-        
         //MARK: - Logic for execution followed by success or faill
         success(self)
     }
+    
 }
 
