@@ -33,7 +33,7 @@ or
 ```ruby
 use_frameworks!
 
-pod 'ExecutionQueue', git: 'https://github.com/Albinzr/ExecutionQueue', :tag => '1.0.0'
+pod 'ExecutionQueue', git: 'https://github.com/Albinzr/ExecutionQueue', :tag => '1.0.4'
 
 ```
 
