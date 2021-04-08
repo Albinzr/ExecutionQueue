@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
   s.name         = "ExecutionQueue"
-  s.version      = "1.0.0"
+  s.version      = "1.0.2"
   s.summary      = "A light weight queueing library for serial execution with retry"
-  s.homepage     = "https://github.com/Albinzr/ExecutionQueue"
+  s.homepage     = "https://github.com/Albinzr/ExecutionQueue.git"
   s.license      = 'MIT'
   s.author       = { "Albin CR" => "albin.git@gmail.com" }
   s.source       = { :git => "https://github.com/Albinzr/ExecutionQueue.git", :tag => "#{s.version}" }
